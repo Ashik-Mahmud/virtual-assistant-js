@@ -36,23 +36,23 @@ const alexResponse = (text) => {
         speech.text = 'Yeah! I am good how about you?';
     } else if (text == 'hey Alexa' || text == 'hi Alexa' || text == 'hello Alexa' || text == 'Alexa') {
         speech.text = 'Yeah! how can i help you';
-    } else if (text == 'hey Alexa please open the Google') {
+    } else if (text == 'hey Alexa please open the Google' || text == 'open the Google') {
         speech.text = 'ok bruh! opening google';
         window.location.href = 'https://www.google.com';
-    } else if (text == 'hey Alexa please open the YouTube') {
+    } else if (text == 'hey Alexa please open the YouTube' || text == 'open the YouTube') {
         speech.text = 'Okay opening!';
         window.location.href = 'https://www.youtube.com/';
-    } else if (text == 'hey Alexa please open the YouTube and play a nice song') {
+    } else if (text == 'hey Alexa please open the YouTube and play a nice song' || text == 'play song on YouTube') {
         speech.text = 'oky this is my favorite one! hope you like it';
         window.location.href = 'https://www.youtube.com/watch?v=Vqfy4ScRXFQ&list=RDMMHQooYn2OReE&index=2';
     } else if (text == "hey Alexa do you know what's the programming Hero") {
         speech.text = 'yeah i know them cool stuff they are one of the most biggest software production company in the world.';
-    } else if (text == 'I am good' || text=='yeah I am good') {
+    } else if (text == 'I am good' || text == 'yeah I am good') {
         speech.text = 'ohh thank you';
-    }else if (text == 'hey Alexa what time is it now' || text=='tell me the time') {
-        speech.text = 'Now time is '+ new Date().toLocaleTimeString();
-    }else if (text == "hey Alexa what's the date today" || text=='tell me the date' || text=="what's today") {
-        speech.text = 'Today is '+ new Date().toDateString();
+    } else if (text == 'hey Alexa what time is it now' || text == 'tell me the time') {
+        speech.text = 'Now time is ' + new Date().toLocaleTimeString();
+    } else if (text == "hey Alexa what's the date today" || text == 'tell me the date' || text == "what's today") {
+        speech.text = 'Today is ' + new Date().toDateString();
     } else if (text == 'ok thank you') {
         speech.text = 'your most welcome broh';
     } else if (text == 'ok I am Aashiq Muhammad') {
@@ -64,16 +64,16 @@ const alexResponse = (text) => {
     } else if (text == 'hey Alexa please change the background colour') {
         speech.text = "ok changing temporary background color";
         document.querySelector('html').classList.add('theme');
-    } else if (text == 'hey Alexa what kind of command do you accept' || text=='open the supported command area') {
+    } else if (text == 'hey Alexa what kind of command do you accept' || text == 'open the supported command area') {
         speech.text = "oh nice question these are the command which I accept.";
         document.querySelector(".command-area").classList.add('active');
     } else if (text == 'hey Alexa please set the default colour') {
         speech.text = "ok set a default background color";
         document.querySelector('html').classList.remove('theme');
-    }else if (text == 'hey Alexa please go to the programming Hero website') {
+    } else if (text == 'hey Alexa please go to the programming Hero website') {
         speech.text = "ok I am going. Programming Hero CEO Jhanker broh himself awesome & cool";
         window.location.href = 'https://web.programming-hero.com/dashboard';
-    }  else {
+    } else {
         speech.text = 'Speech Recognize Failed. please keep your microphone nearest as much as possible.';
     }
 
