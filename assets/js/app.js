@@ -42,7 +42,7 @@ const alexResponse = (text) => {
     } else if (text == 'hey Alexa please open the YouTube') {
         speech.text = 'Okay opening!';
         window.location.href = 'https://www.youtube.com/';
-    } else if (text == 'hey Alexa please open the YouTube and play nice song') {
+    } else if (text == 'hey Alexa please open the YouTube and play a nice song') {
         speech.text = 'oky this is my favorite one! hope you like it';
         window.location.href = 'https://www.youtube.com/watch?v=Vqfy4ScRXFQ&list=RDMMHQooYn2OReE&index=2';
     } else if (text == "hey Alexa do you know what's the programming Hero") {
@@ -64,14 +64,16 @@ const alexResponse = (text) => {
     } else if (text == 'hey Alexa please change the background colour') {
         speech.text = "ok changing temporary background color";
         document.querySelector('html').classList.add('theme');
-    } else if (text == 'what kind of command do you accept' || text=='open the supported command area') {
+    } else if (text == 'hey Alexa what kind of command do you accept' || text=='open the supported command area') {
         speech.text = "oh nice question these are the command which I accept.";
         document.querySelector(".command-area").classList.add('active');
-
     } else if (text == 'hey Alexa please set the default colour') {
         speech.text = "ok set a default background color";
         document.querySelector('html').classList.remove('theme');
-    } else {
+    }else if (text == 'hey Alexa please go to the programming Hero website') {
+        speech.text = "ok I am going. Programming Hero CEO Jhanker broh himself awesome & cool";
+        window.location.href = 'https://web.programming-hero.com/dashboard';
+    }  else {
         speech.text = 'Speech Recognize Failed. please keep your microphone nearest as much as possible.';
     }
 
