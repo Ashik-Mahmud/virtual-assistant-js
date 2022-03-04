@@ -33,7 +33,7 @@ body{
     height: auto;
     background: #fff;
     text-align: center;
-    padding-top: 1rem;
+    padding: 1rem;
     border-radius: 5px;
 }
 #microphone{
@@ -52,10 +52,7 @@ body{
     font-size: 1.5rem;
     transition: all 0.3s ease;
 }
-#microphone:hover{
-    background: #273c75;
-    color: #fff;
-}
+
 #microphone.pulse {
     background: #273c75;
     color: #fff;
