@@ -43,6 +43,7 @@ body{
     text-align: center;
     padding: 1rem;
     border-radius: 5px;
+    overflow: hidden;
     position: relative;
 }
 #microphone{
@@ -150,11 +151,6 @@ body{
 @media (max-width: 768px) {
     body{
         flex-direction: column;
-    }
-    .command-area{
-        position: relative;
-        left: 0%;
-        top: 0%;
     }
 }
 
