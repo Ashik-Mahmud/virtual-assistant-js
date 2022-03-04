@@ -34,7 +34,7 @@ const alexResponse = (text) => {
     /* Command Put Here*/
     if (text == 'hey Alexa how are you doing' || text == 'how are you Alexa') {
         speech.text = 'Yeah! I am good how about you?';
-    } else if (text == 'hey Alexa' || text == 'hi Alexa' || text == 'hello Alexa' || text == 'Alexa') {
+    } else if (text == 'hey Alexa' || text == 'hi Alexa' || text == 'hello Alexa' || text == 'Alexa' || text=='hey bro') {
         speech.text = 'Yeah! how can i help you';
     } else if (text == 'hey Alexa please open the Google' || text == 'open the Gogle') {
         speech.text = 'ok bruh! opening google';
