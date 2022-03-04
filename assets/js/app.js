@@ -36,7 +36,7 @@ const alexResponse = (text) => {
         speech.text = 'Yeah! I am good how about you?';
     } else if (text == 'hey Alexa' || text == 'hi Alexa' || text == 'hello Alexa' || text == 'Alexa') {
         speech.text = 'Yeah! how can i help you';
-    } else if (text == 'hey Alexa please open the Google' || text == 'open the Google') {
+    } else if (text == 'hey Alexa please open the Google' || text == 'open the Gogle') {
         speech.text = 'ok bruh! opening google';
         window.location.href = 'https://www.google.com';
     } else if (text == 'hey Alexa please open the YouTube' || text == 'open the YouTube') {
@@ -59,6 +59,13 @@ const alexResponse = (text) => {
         speech.text = 'yeah! now I know you by name of Ashiq Muhammad'
     } else if (text == 'hey Alexa do you know me') {
         speech.text = 'Noooo! Who are you?'
+    } else if (text == 'hey Alexa search videos on YouTube' || text == 'search videos on YouTube') {
+        speech.text = 'What do you want to search put here?'
+        setTimeout(() => {
+            let searchTerms = prompt('Search Your Videos');
+            window.location.href = `https://www.youtube.com/results?search_query=${searchTerms}`;
+        }, 1000)
+       
     } else if (text == 'hey Alexa do you have a girlfriend') {
         speech.text = "nope broh! what are you talking about? I am machine I don't need girlfriend. I think you should need girlfriend that's why asked me. hahahah";
     } else if (text == 'hey Alexa please change the background colour') {
