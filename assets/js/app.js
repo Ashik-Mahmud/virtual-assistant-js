@@ -18,11 +18,8 @@ const speechRecognition = () => {
         microphoneBtn.classList.add('pulse')
         voiceText.innerHTML = `<small class="text-muted"> listening.... </small>`;
     }
-    recognition.onend = () => {
-        microphoneBtn.classList.remove('pulse');
-        voiceText.innerHTML = `<small class="text-muted"> Not hear yet. </small>`;
-    }
-
+    recognition.onend = () => microphoneBtn.classList.remove('pulse');
+    recognition.onerror = () => voiceText.innerHTML = `<small class="text-muted"> Not hear yet. </small>`;
     recognition.start();
     recognition.onresult = (event) => {
         let userVoiceText = event.results[0][0].transcript;
