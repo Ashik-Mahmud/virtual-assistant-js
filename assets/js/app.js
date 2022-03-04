@@ -43,6 +43,8 @@ const alexResponse = (text) => {
         speech.text = 'yeah i know them cool stuff they are one of the most biggest software production company in the world.';
     } else if (text == 'I am good') {
         speech.text = 'ohh thank you';
+    } else if (text == 'ok thank you') {
+        speech.text = 'your most welcome broh';
     } else if (text == 'ok I am Aashiq Muhammad') {
         speech.text = 'yeah! now I know you by name of Ashiq Muhammad'
     } else if (text == 'hey Alexa do you know me') {

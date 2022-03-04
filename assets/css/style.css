@@ -35,6 +35,7 @@ body{
     text-align: center;
     padding: 1rem;
     border-radius: 5px;
+    position: relative;
 }
 #microphone{
     width: 60px;
@@ -77,4 +78,31 @@ body{
 .display-conversation{
     margin-top: 1rem;
     padding: 1rem;
+}
+
+
+#question-btn{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background: transparent;
+    border: 1px solid #273c75;
+    font-size: 1rem;
+    left: 10px;
+    top: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #273c75;
+    color: #fff;
+}
+#question-btn:hover{
+    background: transparent;
+    color: #273c75;
+}
+
+.command-area{
+    display: none;
 }
