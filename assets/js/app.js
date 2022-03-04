@@ -17,6 +17,7 @@ const speechRecognition = () => {
     voiceText.innerHTML = `<small class="text-muted"> listening.... </small>`;
     microphoneBtn.classList.add('pulse')
     let recognition = new webkitSpeechRecognition();
+    console.log(recognition)
     recognition.onend = () => microphoneBtn.classList.remove('pulse');
     recognition.start();
     recognition.onresult = (event) => {
@@ -33,6 +34,9 @@ const alexResponse = (text) => {
         speech.text = 'Yeah! I am good how about you?';
     } else if (text == 'hey Alexa') {
         speech.text = 'Yeah! how can i help you';
+    }else if (text == 'hey Alexa please open the Google') {
+        speech.text = 'ok bruh! opening google';
+        window.location.href = 'https://www.google.com';
     } else if (text == 'hey Alexa please open the YouTube') {
         speech.text = 'Okay opening!';
         window.location.href = 'https://www.youtube.com/';
@@ -51,6 +55,12 @@ const alexResponse = (text) => {
         speech.text = 'Noooo! Who are you?'
     } else if (text == 'hey Alexa do you have a girlfriend') {
         speech.text = "nope broh! what are you talking about? I am machine I don't need girlfriend. I think you should need girlfriend that's why asked me. hahahah";
+    }else if(text == 'hey Alexa please change the background colour'){
+        speech.text = "ok changing temporary background color";
+        document.querySelector('html').classList.add('theme');
+    }else if(text == 'hey Alexa please set the default colour'){
+        speech.text = "ok set a default background color";
+        document.querySelector('html').classList.remove('theme');
     } else {
         speech.text = 'Speech Recognize Failed. please keep your microphone nearest as much as possible.';
     }
