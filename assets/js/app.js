@@ -30,6 +30,7 @@ const speechRecognition = () => {
 /* STEP: 3 Alexa response function here  */
 const alexResponse = (text) => {
     let speech = new SpeechSynthesisUtterance(text);
+    /* Command Put Here*/ 
     if (text == 'hey Alexa how are you doing') {
         speech.text = 'Yeah! I am good how about you?';
     } else if (text == 'hey Alexa') {
@@ -64,6 +65,8 @@ const alexResponse = (text) => {
     } else {
         speech.text = 'Speech Recognize Failed. please keep your microphone nearest as much as possible.';
     }
+
+
 
     document.getElementById("alexText").innerText = speech.text;
     window.speechSynthesis.speak(speech);
