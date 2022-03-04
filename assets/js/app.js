@@ -66,8 +66,10 @@ const alexResponse = (text) => {
         speech.text = 'What do you want to search put here?'
         setTimeout(() => {
             let searchTerms = prompt('Search Your Videos');
-            let location = `https://www.youtube.com/results?search_query=${searchTerms}`;
-            window.open(location, '_blank')
+            if (searchTerms) {
+                let location = `https://www.youtube.com/results?search_query=${searchTerms}`;
+                window.open(location, '_blank')
+            }
         }, 1000)
 
     } else if (text == 'hey Alexa do you have a girlfriend') {
@@ -75,7 +77,7 @@ const alexResponse = (text) => {
     } else if (text == 'hey Alexa please change the background colour') {
         speech.text = "ok changing temporary background color";
         document.querySelector('html').classList.add('theme');
-    } else if (text == 'hey Alexa what kind of command do you accept' || text == 'open the supported command area' || text=='how many commands do you have') {
+    } else if (text == 'hey Alexa what kind of command do you accept' || text == 'open the supported command area' || text == 'how many commands do you have') {
         speech.text = "oh nice question these are the command which I accept.";
         document.querySelector(".command-area").classList.add('active');
     } else if (text == 'hey Alexa please set the default colour') {
