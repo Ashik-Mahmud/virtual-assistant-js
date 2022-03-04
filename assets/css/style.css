@@ -89,7 +89,9 @@ body{
     padding: 1rem;
 }
 
-
+.display-conversation p{
+    font-size: .9rem;
+}
 #question-btn{
     position: absolute;
     width: 20px;
