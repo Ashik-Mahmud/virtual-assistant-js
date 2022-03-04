@@ -65,7 +65,7 @@ const alexResponse = (text) => {
             let searchTerms = prompt('Search Your Videos');
             window.location.href = `https://www.youtube.com/results?search_query=${searchTerms}`;
         }, 1000)
-       
+
     } else if (text == 'hey Alexa do you have a girlfriend') {
         speech.text = "nope broh! what are you talking about? I am machine I don't need girlfriend. I think you should need girlfriend that's why asked me. hahahah";
     } else if (text == 'hey Alexa please change the background colour') {
@@ -77,9 +77,11 @@ const alexResponse = (text) => {
     } else if (text == 'hey Alexa please set the default colour') {
         speech.text = "ok set a default background color";
         document.querySelector('html').classList.remove('theme');
-    } else if (text == 'hey Alexa please go to the programming Hero website') {
+    } else if (text == 'hey Alexa please go to the programming Hero website' || text == 'go to the programming Hero dashboard') {
         speech.text = "ok I am going. Programming Hero CEO Jhanker broh himself awesome & cool";
         window.location.href = 'https://web.programming-hero.com/dashboard';
+    } else if (text == 'hey Alexa who is your founder' || text == 'hey Alexa who made you') {
+        speech.text = "Yeah! my founder name is Ashik Mahmud & He is student of programming Hero batch 5. He is so hard working man. I love him.";
     } else {
         speech.text = 'Speech Recognize Failed. please keep your microphone nearest as much as possible.';
     }
