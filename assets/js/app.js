@@ -49,6 +49,10 @@ const alexResponse = (text) => {
         speech.text = 'yeah i know them cool stuff they are one of the most biggest software production company in the world.';
     } else if (text == 'I am good') {
         speech.text = 'ohh thank you';
+    }else if (text == 'hey Alexa what time is it now') {
+        speech.text = 'Now time is '+ new Date().toLocaleTimeString();
+    }else if (text == "hey Alexa what's the date today") {
+        speech.text = 'Today is '+ new Date().toDateString();
     } else if (text == 'ok thank you') {
         speech.text = 'your most welcome broh';
     } else if (text == 'ok I am Aashiq Muhammad') {
