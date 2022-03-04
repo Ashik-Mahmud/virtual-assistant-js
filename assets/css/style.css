@@ -104,5 +104,28 @@ body{
 }
 
 .command-area{
+    display: block;
+    width: 400px;
+    background: #fff;
+    padding: 1rem;
+    position: absolute;
+    top: 27%;
+    left: 18%;
     display: none;
+}
+.command-area ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.command-area h3{
+    margin: 0.4rem 0rem;
+}
+.command-area ul li{
+    padding: .3rem;
+    border: 1px solid #eee;
+    font-size: .9rem;
+}
+.show{
+    display: block;
 }

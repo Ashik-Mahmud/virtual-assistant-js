@@ -60,3 +60,7 @@ const alexResponse = (text) => {
 }
 
 microphoneBtn.addEventListener('click', speechRecognition);
+
+document.getElementById("question-btn").addEventListener('click', () =>{
+    document.querySelector(".command-area").classList.toggle('show');
+})
