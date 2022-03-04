@@ -118,11 +118,19 @@ body{
     background: #fff;
     padding: 1rem;
     height: auto;
-    display: none;
+    display: block;
     position: absolute;
-    inset: 0;
     overflow-y: scroll;
     text-align: left;
+    top: 0%;
+    left: 100%;
+    right: 0%;
+    transition: all 0.6s ease;
+    z-index: 0;
+}
+.command-area.active{
+    left: 0%;
+    max-height: 100%;
 }
 .command-area::-webkit-scrollbar{
     width: 1px;
@@ -137,16 +145,22 @@ body{
 }
 .command-area h3{
     margin: 0.4rem 0rem;
+    position: sticky;
+    background: #fff;
+    top: -6%;
+    padding: 0.5rem;
 }
 .command-area ul li{
     padding: .3rem;
     border: 1px solid #eee;
     font-size: .9rem;
     text-transform: capitalize;
+    transition: all 0.3s ease;
 }
-.show{
-    display: block;
+.command-area ul li:hover{
+    background: #f8f8f8;
 }
+
 
 @media (max-width: 768px) {
     body{

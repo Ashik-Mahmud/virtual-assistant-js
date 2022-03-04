@@ -1,11 +1,9 @@
 /* 
 TODO:
--
--
--
--
--
--
+- select all of important elements
+- grab all of element from Speech web api 
+- Alexa response function here
+- toggle show command area
 */
 
 /* STEP: 1 select all of important elements  */
@@ -14,11 +12,17 @@ const voiceText = document.getElementById("voiceText");
 
 /* STEP: 2 grab all of element from Speech web api  */
 const speechRecognition = () => {
-    voiceText.innerHTML = `<small class="text-muted"> listening.... </small>`;
-    microphoneBtn.classList.add('pulse')
     let recognition = new webkitSpeechRecognition();
-    console.log(recognition)
-    recognition.onend = () => microphoneBtn.classList.remove('pulse');
+
+    recognition.onstart = () => {
+        microphoneBtn.classList.add('pulse')
+        voiceText.innerHTML = `<small class="text-muted"> listening.... </small>`;
+    }
+    recognition.onend = () => {
+        microphoneBtn.classList.remove('pulse');
+        voiceText.innerHTML = `<small class="text-muted"> Not hear yet. </small>`;
+    }
+
     recognition.start();
     recognition.onresult = (event) => {
         let userVoiceText = event.results[0][0].transcript;
@@ -30,12 +34,12 @@ const speechRecognition = () => {
 /* STEP: 3 Alexa response function here  */
 const alexResponse = (text) => {
     let speech = new SpeechSynthesisUtterance(text);
-    /* Command Put Here*/ 
+    /* Command Put Here*/
     if (text == 'hey Alexa how are you doing') {
         speech.text = 'Yeah! I am good how about you?';
     } else if (text == 'hey Alexa') {
         speech.text = 'Yeah! how can i help you';
-    }else if (text == 'hey Alexa please open the Google') {
+    } else if (text == 'hey Alexa please open the Google') {
         speech.text = 'ok bruh! opening google';
         window.location.href = 'https://www.google.com';
     } else if (text == 'hey Alexa please open the YouTube') {
@@ -56,10 +60,10 @@ const alexResponse = (text) => {
         speech.text = 'Noooo! Who are you?'
     } else if (text == 'hey Alexa do you have a girlfriend') {
         speech.text = "nope broh! what are you talking about? I am machine I don't need girlfriend. I think you should need girlfriend that's why asked me. hahahah";
-    }else if(text == 'hey Alexa please change the background colour'){
+    } else if (text == 'hey Alexa please change the background colour') {
         speech.text = "ok changing temporary background color";
         document.querySelector('html').classList.add('theme');
-    }else if(text == 'hey Alexa please set the default colour'){
+    } else if (text == 'hey Alexa please set the default colour') {
         speech.text = "ok set a default background color";
         document.querySelector('html').classList.remove('theme');
     } else {
@@ -74,6 +78,7 @@ const alexResponse = (text) => {
 
 microphoneBtn.addEventListener('click', speechRecognition);
 
-document.getElementById("question-btn").addEventListener('click', () =>{
-    document.querySelector(".command-area").classList.toggle('show');
+/* STEP: 4 toggle show command area  */
+document.getElementById("question-btn").addEventListener('click', () => {
+    document.querySelector(".command-area").classList.toggle('active');
 })
