@@ -32,9 +32,9 @@ const speechRecognition = () => {
 const alexResponse = (text) => {
     let speech = new SpeechSynthesisUtterance(text);
     /* Command Put Here*/
-    if (text == 'hey Alexa how are you doing') {
+    if (text == 'hey Alexa how are you doing' || text == 'how are you Alexa') {
         speech.text = 'Yeah! I am good how about you?';
-    } else if (text == 'hey Alexa') {
+    } else if (text == 'hey Alexa' || text == 'hi Alexa' || text == 'hello Alexa' || text == 'Alexa') {
         speech.text = 'Yeah! how can i help you';
     } else if (text == 'hey Alexa please open the Google') {
         speech.text = 'ok bruh! opening google';
@@ -47,11 +47,11 @@ const alexResponse = (text) => {
         window.location.href = 'https://www.youtube.com/watch?v=Vqfy4ScRXFQ&list=RDMMHQooYn2OReE&index=2';
     } else if (text == "hey Alexa do you know what's the programming Hero") {
         speech.text = 'yeah i know them cool stuff they are one of the most biggest software production company in the world.';
-    } else if (text == 'I am good') {
+    } else if (text == 'I am good' || text=='yeah I am good') {
         speech.text = 'ohh thank you';
-    }else if (text == 'hey Alexa what time is it now') {
+    }else if (text == 'hey Alexa what time is it now' || text=='tell me the time') {
         speech.text = 'Now time is '+ new Date().toLocaleTimeString();
-    }else if (text == "hey Alexa what's the date today") {
+    }else if (text == "hey Alexa what's the date today" || text=='tell me the date' || text=="what's today") {
         speech.text = 'Today is '+ new Date().toDateString();
     } else if (text == 'ok thank you') {
         speech.text = 'your most welcome broh';
@@ -64,6 +64,10 @@ const alexResponse = (text) => {
     } else if (text == 'hey Alexa please change the background colour') {
         speech.text = "ok changing temporary background color";
         document.querySelector('html').classList.add('theme');
+    } else if (text == 'what kind of command do you accept' || text=='open the supported command area') {
+        speech.text = "oh nice question these are the command which I accept.";
+        document.querySelector(".command-area").classList.add('active');
+
     } else if (text == 'hey Alexa please set the default colour') {
         speech.text = "ok set a default background color";
         document.querySelector('html').classList.remove('theme');
